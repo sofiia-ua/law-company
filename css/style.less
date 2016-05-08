@@ -1,31 +1,776 @@
-/*Comments*/
+@import "color";
 
-@color_blue: #263d74;
-@color_white: #ffffff;
 
-/*!--ЧАСТИНА І */
-con{
-    width:100%;
-    height:auto;
-    background-image: url(../img/background.png);
-    background-repeat: no-repeat;
-    background-size: cover; 
+body {
+  background-color: @white;
+  font-family: 'Roboto Slab', serif;
 }
-
-container {
-    font-family: Arial;
-    
-    
-    ul li{
-        display: inline; /* Отображать как строчный элемент */ 
-        padding-right: 40px;
-        }
-            h1 {
-                margin-bottom: -25px; /* Отрицательный отступ между заголовком и текстом */
-                }   
-          
-    /*ptd{
-         height:540px;      
- 
-    }*/
+.firstBlock {
+  height: auto;
+  background-image: url(../img/head.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+}
+.firstBlock .container {
+  margin: 0 auto;
+  z-index: 1;
+}
+.bg {
+  padding: 0;
+}
+header {
+  margin-top: 25px;
+  padding: 0 30px;
+}
+header ul {
+  margin: 25px 0;
+  list-style-type: none;
+}
+@media only screen and (max-width: 768px) {
+  header ul {
+    margin: 10px 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header ul {
+    margin: 10px 0;
+  }
+}
+header ul li {
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 40px;
+}
+@media only screen and (max-width: 768px) {
+  header ul li {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header ul li {
+    margin-right: 10px;
+  }
+}
+header ul li a {
+  color: @black;
+}
+header ul li a:hover,
+header ul li a:visited,
+header ul li a:active {
+  color: @black;
+  text-decoration: none;
+  padding-bottom: 19px;
+  border-bottom: solid 4px @blue;
+}
+@media only screen and (max-width: 768px) {
+  header ul li a:hover,
+  header ul li a:visited,
+  header ul li a:active {
+    border-bottom: 0 solid @blue;
+  }
+}
+header .leng {
+  margin-top: 25px;
+}
+header .leng a {
+  color: @light2;
+  text-decoration: none;
+  font-size: 12px;
+}
+header .leng a:hover,
+header .leng a:active {
+  color: @black;
+  border-bottom: dotted 1px @black;
+}
+nav {
+  height: 60px;
+}
+nav .nav-header {
+  padding: 0;
+}
+.title {
+  background-color: @light1;
+  margin-top: 47px;
+  margin-bottom: 39px;
+  padding: 30px 0;
+}
+@media only screen and (max-width: 768px) {
+  .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+  }
+}
+.title h1 {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 38px;
+}
+@media only screen and (min-width: 1081px) and (max-width: 1310px) {
+  .title h1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .title h1 {
+    font-size: 18px;
+  }
+}
+.title h1 span {
+  font-size: 15px;
+}
+@media only screen and (max-width: 480px) {
+  .title h1 span {
+    font-size: 12px;
+  }
+}
+.title h1 #line-1,
+.title h1 #line-2 {
+  display: inline-block;
+  width: 130px;
+  height: 1px;
+  margin: 6px 10px 0;
+  background-color: @light2;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 1081px) and (max-width: 1310px) {
+  .title h1 #line-1,
+  .title h1 #line-2 {
+    width: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .title h1 #line-1,
+  .title h1 #line-2 {
+    width: 60px;
+  }
+}
+/*banner photo*/
+.img {
+  padding: 0;
+  width: 120%;
+  position: relative;
+  left: -6%;
+}
+@media only screen and (max-width: 480px) {
+  .img {
+    width: 100%;
+    left: 0;
+  }
+}
+.info {
+  position: relative;
+  top: -40px;
+  z-index: 3;
+}
+@media only screen and (max-width: 480px) {
+  .info {
+    top: -20px;
+  }
+}
+.info .insurance {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  position: relative;
+  background-color: @light1;
+  border-bottom: solid 4px @light2;
+}
+.info .insurance::after {
+  content: '';
+  position: absolute;
+  left: 37.5%;
+  top: -18px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid @light1;
+}
+@media only screen and (max-width: 480px) {
+  .info .insurance::after {
+    left: 33%;
+  }
+}
+.info .insurance h2 {
+  color: @blue;
+  font-size: 30px;
+  margin-top: 0;
+}
+.info .insurance .btn {
+  border-radius: 0;
+  background-color: @blue;
+  margin-top: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 19px;
+}
+@media only screen and (max-width: 480px) {
+  .info .insurance .btn {
+    font-size: 13px;
+  }
+}
+.info .insurance p {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.info .insurance .name {
+  padding: 0 30px;
+  border-left: solid 2px @light2;
+}
+@media only screen and (max-width: 768px) {
+  .info .insurance .name {
+    border-style: none;
+    padding: 0 15px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .info .insurance .name {
+    border-style: none;
+    padding: 0 15px;
+  }
+}
+.codex {
+  margin-top: 45px;
+  margin-bottom: 95px;
+}
+@media only screen and (max-width: 768px) {
+  .codex {
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .codex {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.codex h3 {
+  color: @blue;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+.codex hr {
+  height: 2px;
+  margin-bottom: 45px;
+  border: 0;
+  background-color: @light1;
+  text-align: center;
+}
+.codex hr::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -13px;
+  width: 120px;
+  height: 4px;
+  background-color: @blue;
+}
+@media only screen and (max-width: 500px) {
+  .codex hr::after {
+    width: 90px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .codex hr {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+.codex ul {
+  list-style-type: square;
+  color: @blue;
+}
+.codex ul li {
+  margin: 10px 0;
+}
+.codex ul li span {
+  color: @black;
+}
+.codex p {
+  margin-top: 10px;
+}
+.package h2 {
+  font-size: 38px;
+  margin: 80px 0 23px 0;
+  text-align: center;
+}
+@media only screen and (max-width: 400px) {
+  .package h2 {
+    font-size: 30px;
+    margin: 30px 0 20px 0;
+  }
+}
+.package {
+  background-color: @blue;
+}
+.package .container {
+  max-width: 1170px;
+  padding: 0 30px 0 30px;
+}
+.package .container p,
+.package .container h2 {
+  color: @light1;
+}
+.package .container p {
+  font-size: 19px;
+  text-align: center;
+  margin: -9px 0 28px 0;
+}
+@media only screen and (max-width: 320px) {
+  .package .container p {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .package .container p {
+    margin-bottom: 40px;
+  }
+}
+.package .container hr {
+  height: 2px;
+  margin-bottom: 34px;
+  border: 0;
+  background-color: @light2;
+  text-align: center;
+}
+.package .container hr::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -13px;
+  width: 120px;
+  height: 4px;
+  background-color: @white;
+}
+@media only screen and (max-width: 500px) {
+  .package .container hr::after {
+    width: 90px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .package .container hr {
+    width: 200px;
+  }
+}
+.package .container a {
+  color: @blue;
+  font-size: 30px;
+  margin: 0 30px 90px 30px;
+  text-align: center;
+  text-decoration: none;
+}
+@media only screen and (max-width: 600px) {
+  .package .container a {
+    font-size: 19px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .package .container a {
+    margin: 0 0 20px 0;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .package .container a {
+    font-size: 15px;
+  }
+}
+.package .container .right {
+  margin-left: 0;
+}
+.package .container .btn-lg {
+  border-radius: 0;
+  background-color: @light2;
+  height: 110px;
+  line-height: 90px;
+  margin: 10px;
+  margin-bottom: 65px;
+}
+@media only screen and (max-width: 480px) {
+  .package .container .btn-lg {
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+.service {
+  background-color: @white;
+}
+.service .container h2 {
+  color: @blue;
+  margin: 117px 0 9px 0;
+  text-align: center;
+}
+@media only screen and (max-width: 1000px) {
+  .service .container h2 {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .service .container h2 {
+    margin-top: 30px;
+  }
+}
+.service .container hr {
+  height: 2px;
+  margin-bottom: 18px;
+  border: 0;
+  background-color: @light1;
+  text-align: center;
+}
+.service .container hr::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -13px;
+  width: 120px;
+  height: 4px;
+  background-color: @blue;
+}
+@media only screen and (max-width: 500px) {
+  .service .container hr::after {
+    width: 90px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .service .container hr {
+    width: 200px;
+  }
+}
+.service .container p {
+  font-size: 15px;
+  margin-bottom: 58px;
+  margin-top: 9px;
+  color: @black;
+  font-weight: 300;
+  text-align: center;
+}
+@media only screen and (max-width: 800px) {
+  .service .container p {
+    margin-top: 40px;
+  }
+}
+.service .container button {
+  color: @white;
+  font-size: 19px;
+  font-weight: 400;
+  margin: 0 140px 105px 140px;
+  text-align: center;
+}
+@media only screen and (max-width: 480px) {
+  .service .container button {
+    font-size: 14px;
+    margin: 0 0 30px 0;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .service .container button {
+    font-size: 15px;
+    margin: 0 100px 105px 100px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .service .container button {
+    margin: 0 0 60px 0;
+    font-size: 19px;
+  }
+}
+.service .container button {
+  margin: auto auto 93px;
+  border-radius: 0;
+  background-color: @blue;
+  height: 48px;
+}
+@media only screen and (max-width: 768px) {
+  .service .container button {
+    margin: auto auto 45px ;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .service .container button {
+    margin: auto auto 30px ;
+  }
+}
+.comment {
+  background-color: @light1;
+  position: relative;
+  height: 650px;
+}
+.comment .block h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: none;
+  color: @blue;
+  text-align: center;
+}
+.comment .block .underline {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.comment .block .underline div {
+  width: 33%;
+  background-color: @light2;
+  height: 2px;
+}
+.comment .block .underline div:nth-child(2) {
+  background-color: @blue;
+  height: 4px;
+}
+.comment .block p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: @black;
+  text-align: center;
+  padding: 5px;
+  padding-top: 35px;
+}
+.comment .block p:nth-child(2) {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: none;
+  color: @black;
+  text-align: center;
+  padding-top: 10px;
+}
+.comment .block .text-slide {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+.comment .block .text-slide a {
+  padding: 5px;
+}
+.comment .block .text-slide a i {
+  margin: auto;
+  color: @blue;
+}
+.comment .video {
+  position: relative;
+  top: 10px;
+}
+.application {
+  background-color: @white;
+  padding-top: 300px;
+}
+.application .block h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: none;
+  color: @blue;
+  text-align: center;
+}
+.application .block .underline {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.application .block .underline div {
+  width: 33%;
+  background-color: @light2;
+  height: 2px;
+}
+.application .block .underline div:nth-child(2) {
+  background-color: @blue;
+  height: 4px;
+}
+.application .block p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  padding-top: 55px;
+}
+.application .block .form-group {
+  margin-bottom: 0;
+}
+.application .block .form-group .form-control {
+  border-width: 0 0 3px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.application .block .form-group ::-webkit-input-placeholder {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: black;
+  text-align: center;
+}
+.application .block .form-group :-moz-placeholder {
+  /* older Firefox*/
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: black;
+  text-align: center;
+}
+.application .block .form-group ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: black;
+  text-align: center;
+}
+.application .block .form-group :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: black;
+  text-align: center;
+}
+.application .block button {
+  height: 50px;
+  background-color: @blue;
+  margin-top: 40px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 19.5px;
+  font-weight: 300;
+  text-transform: none;
+  color: white;
+  text-align: center;
+}
+.contact {
+  background-color: @blue;
+  padding: 0px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 30px;
+  /*	position: relative;
+	top: 90px;
+	z-index: 1000;*/
+}
+.contact p {
+  display: block;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+.contact p span {
+  font-weight: bold;
+}
+.map {
+  height: 350px;
+  overflow: hidden;
+  padding: 0;
+}
+footer {
+  background-color: #232323;
+  padding: 10px;
+}
+footer p {
+  display: block;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+footer p span {
+  font-weight: bold;
+}
+@media screen and (max-width: 970px) {
+  .comment {
+    height: 550px;
+  }
+  .comment .block .text-slide {
+    margin-top: 10px;
+  }
+  .application {
+    padding-top: 120px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .comment {
+    height: auto;
+  }
+  .comment .block h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 26px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: @blue;
+    text-align: center;
+  }
+  .comment .block p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: none;
+    color: @black;
+    text-align: center;
+    padding-top: 15px;
+  }
+  .comment .block p:nth-child(2) {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: none;
+    color: @black;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .application {
+    padding-top: 10px;
+  }
+  .application .block h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 26px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: @blue;
+    text-align: center;
+  }
+  .application .block p {
+    padding-top: 15px;
+  }
+  .application .block button {
+    margin-top: 10px;
+    height: 40px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: none;
+    color: white;
+    text-align: center;
+  }
+  .contact {
+    position: static;
+    margin-top: 30px;
+  }
 }
